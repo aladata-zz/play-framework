@@ -1,0 +1,26 @@
+README
+=================================
+
+Dev Installation
+----------------------
+- get code from git
+- run 'activator' command. Then run 'compile', then 'testOnly unit.*', then 'run' in console
+- for integration tests to pass you need Postgres installed, running and with plank user configured (see Python code readme).
+
+
+Unit Testing
+----------------------
+Unit tests are broken up in to Integration (slower) and Unit package.
+to run only one of those categories, use the following in Play console (note, case sensitivity):
+[plank-play-app] $ testOnly unit.*
+[plank-play-app] $ testOnly integration.*
+
+
+Build
+----------------------
+! Important. If you are adding dependencies into build.sbt file, then console need to be restarted (rerun activator executable) to cause loading of drivers.
+
+
+Evolutions
+----------------------
+Use them for usersdb and for vendors-shard1. the other oltp shards will have to be managed manualy
